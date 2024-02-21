@@ -8,6 +8,8 @@ const AddNewMovieComponent = () => {
     movieYear: '',
     movieGenre1: '',
     movieGenre2: '',
+    movieGenre3: '',
+    movieGenre4: '',
     imdbRating: 0,
   });
 
@@ -30,6 +32,26 @@ const AddNewMovieComponent = () => {
       ...movieInfo,
       movieGenre1: event.target.value,
     });
+  };
+  const movieGenre3Handler = (event) => {
+    if (event.target.value !== movieInfo.movieGenre1) {
+      setMovieInfo({
+        ...movieInfo,
+        movieGenre3: event.target.value,
+      });
+    } else {
+      alert(`Two genres can't be the same`);
+    }
+  };
+  const movieGenre4Handler = (event) => {
+    if (event.target.value !== movieInfo.movieGenre2 ) {
+      setMovieInfo({
+        ...movieInfo,
+        movieGenre4: event.target.value,
+      });
+    } else {
+      alert(`Two genres can't be the same`);
+    }
   };
 
   const movieGenre2Handler = (event) => {
@@ -68,7 +90,7 @@ const AddNewMovieComponent = () => {
           })
   };
 
-  const { movieName, movieYear, movieGenre1, movieGenre2, imdbRating } = movieInfo;
+  const { movieName, movieYear, movieGenre1, movieGenre2,movieGenre3,movieGenre4, imdbRating } = movieInfo;
 
   return (
     <form className='form-container' onSubmit={formSubmitHandler}>
@@ -118,6 +140,42 @@ const AddNewMovieComponent = () => {
       <div className='form-group'>
         <label>Movie Genre 2</label>
         <select value={movieGenre2} onChange={movieGenre2Handler} required>
+          <option value=''>-- Please select --</option>
+          <option value='Action'>Action</option>
+          <option value='Comedy'>Comedy</option>
+          <option value='Drama'>Drama</option>
+          <option value='SciFi'>SciFi</option>
+          <option value='Horror'>Horror</option>
+          <option value='Thriller'>Thriller</option>
+          <option value='Romance'>Romance</option>
+          <option value='Fantasy'>Fantasy</option>
+          <option value='Animation'>Animation</option>
+          <option value='Adventure'>Adventure</option>
+          <option value='Crime'>Crime</option>
+          <option value='Biography'>Biography</option>
+        </select>
+      </div>
+      <div className='form-group'>
+        <label>Movie Genre 3</label>
+        <select value={movieGenre3} onChange={movieGenre3Handler} required>
+          <option value=''>-- Please select --</option>
+          <option value='Action'>Action</option>
+          <option value='Comedy'>Comedy</option>
+          <option value='Drama'>Drama</option>
+          <option value='SciFi'>SciFi</option>
+          <option value='Horror'>Horror</option>
+          <option value='Thriller'>Thriller</option>
+          <option value='Romance'>Romance</option>
+          <option value='Fantasy'>Fantasy</option>
+          <option value='Animation'>Animation</option>
+          <option value='Adventure'>Adventure</option>
+          <option value='Crime'>Crime</option>
+          <option value='Biography'>Biography</option>
+        </select>
+      </div>
+      <div className='form-group'>
+        <label>Movie Genre 4</label>
+        <select value={movieGenre4} onChange={movieGenre4Handler} required>
           <option value=''>-- Please select --</option>
           <option value='Action'>Action</option>
           <option value='Comedy'>Comedy</option>

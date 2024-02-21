@@ -8,7 +8,8 @@ const MovieComponent = ({movieItem}) => {
             <p className="year">({movieItem.movieYear})</p>
             <p className="rating-label">IMDb Rating : <span className="rating">{movieItem.imdbRating}/10</span></p>
             <p className="genre">
-              Genre : {movieItem.movieGenre1}, {movieItem.movieGenre2}
+              Genre : {movieItem.movieGenre1}, {movieItem.movieGenre2}, 
+              {movieItem.movieGenre3}, {movieItem.movieGenre4}
             </p>
           </div>
         </div>
